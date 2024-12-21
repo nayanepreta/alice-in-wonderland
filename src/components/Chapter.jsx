@@ -1,29 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import DOMPurify from 'dompurify';
+import chapters from '../control/chapters';
+import Navigation from './Navigation';
 
 
-const Chapter = ({ chapterRoman, chapterTitle, image, chapterTexts }) => {
+const Chapter = ({ chapterNumber, onNext, goToContents, goToCover }) => {
+  const { title: chapterTitle, chap: chapterRoman, img: image, texts: chapterTexts } = chapters[chapterNumber];
+
+  useEffect(() => {
+    const bookTitleT = chapters[0].titulo;
+    document.title = `${chapterTitle} • ${bookTitleT}`;
+    return () => {
+      document.title = chapters[0].titulo;
+    };
+  }, [chapterTitle]);
+
   return (
-    <>
+    <div className="page chapter_page">
       <span className="chapter_subtitle">{chapterRoman}</span>
       <h2 className="chapter_title">{chapterTitle}</h2>
+      <img className="chapter_img_abertura" src={image} alt="" loading="lazy"/>
 
-      <img
-        className="chapter_img_abertura"
-        src={image}
-        alt=""
-      />
+      <div className="chapter_content">
+        {chapterTexts.map((paragraph, index) => (
+          <p
+            className={paragraph.className}
+            key={index}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(paragraph.text) }}
+          ></p>
+        ))}
+      </div>
 
-    <div className="chapter_content">
-      {chapterTexts.map((paragraph, index) => (
-        <p
-          className={paragraph.className}
-          key={index}
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(paragraph.text) }}
-        ></p>
-      ))}
+      <Navigation 
+        goToCover={goToCover} 
+        onNext={onNext} 
+        goToContents={goToContents} />
     </div>
-    </>
   );
 };
 

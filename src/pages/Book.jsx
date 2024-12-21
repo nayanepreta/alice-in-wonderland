@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable'; 
-import '../control/main';
+import '../control/copy';
 import '../styles/ebook.css';
 import Cover from '../components/Cover';
-import Infos1 from '../components/Infos1';
+import Infos from '../components/Infos';
 import Contents from '../components/Contents';
 import Chapter1 from '../chapters/Chapter1';
 import Chapter2 from '../chapters/Chapter2';
@@ -23,7 +23,7 @@ const Book = () => {
       onNext={() => setCurrentPageAndSave(1)} 
       goToContents={() => setCurrentPageAndSave('menu')} />,
 
-    <Infos1 
+    <Infos 
       onPrev={() => setCurrentPageAndSave(0)} 
       onNext={() => setCurrentPageAndSave(2)} 
       goToContents={() => setCurrentPageAndSave('menu')} 

@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import chapters from '../control/chapters';
 import Navigation from './Navigation';
-import '../styles/ebook.css';
-import bookTitle from '../control/title';
 
 const Contents = ({ 
   goToChapter, 
@@ -10,15 +8,14 @@ const Contents = ({
   onNext, 
   goToCover }) => {
 
-  const chapterTitle = "Sumário";
+  const chapterTitle = "Summary";
 
-  const titulo = chapters[0].titulo; 
-
-  useEffect(() => {
-    bookTitle(chapterTitle); 
-      return () => {
-          document.title = titulo; 
-      };
+      useEffect(() => {
+        const bookTitleT = chapters[0].titulo; 
+        document.title = `${chapterTitle} • ${bookTitleT}`;
+        return () => {
+          document.title = chapters[0].titulo; 
+        };
       }, [chapterTitle]);
 
   return (
@@ -27,7 +24,7 @@ const Contents = ({
       <img 
         className="icone_cabeco" 
         src="https://via.placeholder.com/25" 
-        alt="Imagem Placeholder"/>
+        alt="Imagem Placeholder" loading="lazy"/>
 
     <table 
       className="menu_tabela">

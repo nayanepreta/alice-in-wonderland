@@ -1,3 +1,5 @@
+const createChapter = (title, chap, img, texts) => ({ title, chap, img, texts });
+
 const chapters = {
   0: {
     titulo: "Alice’s Adventures in Wonderland",
@@ -6,13 +8,9 @@ const chapters = {
     ano: "2025"
   },
 
-  1: { 
-    title: "Down the Rabbit-Hole", 
-    chap: "I", 
-    img: "https://via.placeholder.com/25",
-    texts: [
+  1: createChapter("Down the Rabbit-Hole", "I", "https://via.placeholder.com/25", [
         {
-          text: "<b>Alice</b> was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, ‘and what is the use of a book,’ thought Alice ‘without pictures or conversation?’",
+          text: "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, ‘and what is the use of a book,’ thought Alice ‘without pictures or conversation?’",
           className: "chapter_text"
         },{
           text: "So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies, when suddenly a White Rabbit with pink eyes ran close by her.",
@@ -94,14 +92,10 @@ const chapters = {
           text: "* * * *",
           className: "chapter_ret"
         }
-    ] 
-  },
+    ]),
 
-  2: { 
-    title: "The Pool of Tears", 
-    chap: "II",
-    img: "https://via.placeholder.com/25",
-    texts: [
+  2: createChapter("The Pool of Tears", "II", "https://via.placeholder.com/25", 
+    [
         {
           text: "’Curiouser and curiouser!’ cried Alice (she was so much surprised, that for the moment she quite forgot how to speak good English); ‘now I’m opening out like the largest telescope that ever was! Good-bye, feet!’ (for when she looked down at her feet, they seemed to be almost out of sight, they were getting so far off). ‘Oh, my poor little feet, I wonder who will put on your shoes and stockings for you now, dears? I’m sure I shan’t be able! I shall be a great deal too far off to trouble myself about you: you must manage the best way you can; —but I must be kind to them,’ thought Alice, ‘or perhaps they won’t walk the way I want to go! Let me see: I’ll give them a new pair of boots every Christmas.’",
           className: "chapter_text"
@@ -109,7 +103,7 @@ const chapters = {
           text: "And she went on planning to herself how she would manage it. ‘They must go by the carrier,’ she thought; ‘and how funny it’ll seem, sending presents to one’s own feet! And how odd the directions will look!",
           className: "chapter_text"
         },{
-          text: "ALICE’S RIGHT FOOT, ESQ.\n HEARTHRUG,\nNEAR THE FENDER,\n(WITH ALICE’S LOVE).",
+          text: "ALICE’S RIGHT FOOT, ESQ.</br> HEARTHRUG,</br>NEAR THE FENDER,</br>(WITH ALICE’S LOVE).",
           className: "chapter_citacao"
         },{
           text: "Oh dear, what nonsense I’m talking!",
@@ -133,7 +127,7 @@ const chapters = {
           text: "’I’m sure I’m not Ada,’ she said, ‘for her hair goes in such long ringlets, and mine doesn’t go in ringlets at all; and I’m sure I can’t be Mabel, for I know all sorts of things, and she, oh! she knows such a very little! Besides, she’s she, and I’m I, and—oh dear, how puzzling it all is! I’ll try if I know all the things I used to know. Let me see: four times five is twelve, and four times six is thirteen, and four times seven is—oh dear! I shall never get to twenty at that rate! However, the Multiplication Table doesn’t signify: let’s try Geography. London is the capital of Paris, and Paris is the capital of Rome, and Rome—no, that’s all wrong, I’m certain! I must have been changed for Mabel! I’ll try and say ‘How doth the little—‘‘ and she crossed her hands on her lap as if she were saying lessons, and began to repeat it, but her voice sounded hoarse and strange, and the words did not come the same as they used to do",
           className: "chapter_text"  
         },{
-          text: "— ’How doth the little crocodile\nImprove his shining tail,\nAnd pour the waters of the Nile\n On every golden scale!\n\n‘How cheerfully he seems to grin, \nHow neatly spread his claws,\n And welcome little fishes in\n With gently smiling jaws!’",
+          text: "— ’How doth the little crocodile</br>Improve his shining tail,</br>And pour the waters of the Nile</br> On every golden scale!</br></br>‘How cheerfully he seems to grin, </br>How neatly spread his claws,</br> And welcome little fishes in</br> With gently smiling jaws!’",
           className: "chapter_poema"
         },{
           text: "’I’m sure those are not the right words,’ said poor Alice, and her eyes filled with tears again as she went on, ‘I must be Mabel after all, and I shall have to go and live in that poky little house, and have next to no toys to play with, and oh! ever so many lessons to learn! No, I’ve made up my mind about it; if I’m Mabel, I’ll stay down here! It’ll be no use their putting their heads down and saying ‘Come up again, dear!’ I shall only look up and say ‘Who am I then? Tell me that first, and then, if I like being that person, I’ll come up: if not, I’ll stay down here till I’m somebody else’—but, oh dear!’ cried Alice, with a sudden burst of tears, ‘I do wish they would put their heads down! I am so very tired of being all alone here!’",
@@ -175,14 +169,9 @@ const chapters = {
           text: "So she called softly after it, ‘Mouse dear! Do come back again, and we won’t talk about cats or dogs either, if you don’t like them!’ When the Mouse heard this, it turned round and swam slowly back to her: its face was quite pale (with passion, Alice thought), and it said in a low trembling voice, ‘Let us get to the shore, and then I’ll tell you my history, and you’ll understand why it is I hate cats and dogs.’",
           className: "chapter_text"
         }
-      ]
-  },
+      ]),
     
-  3: { 
-    title: "A Caucus-Race and a Long Tale", 
-    chap: "III",
-    img: "https://via.placeholder.com/25",
-    texts: [
+  3: createChapter("A Caucus-Race and a Long Tale", "III", "https://via.placeholder.com/25", [
         {
           text: "They were indeed a queer-looking party that assembled on the bank—the birds with draggled feathers, the animals with their fur clinging close to them, and all dripping wet, cross, and uncomfortable.",
           className: "chapter_text"
@@ -330,14 +319,9 @@ const chapters = {
           text: "’I wish I hadn’t mentioned Dinah!’ she said to herself in a melancholy tone. ‘Nobody seems to like her, down here, and I’m sure she’s the best cat in the world! Oh, my dear Dinah! I wonder if I shall ever see you any more!’ And here poor Alice began to cry again, for she felt very lonely and low-spirited. In a little while, however, she  again heard a little pattering of footsteps in the distance, and she looked up eagerly, half hoping that the Mouse had changed his mind, and was coming back to finish his story.",
           className: "chapter_text"
         
-        }]
-  },
+        }]),
 
-  4: { 
-    title: "The Rabbit Sends in a Little Bill", 
-    chap: "IV",
-    img: "https://via.placeholder.com/25",
-    texts: [
+  4: createChapter("The Rabbit Sends in a Little Bill", "IV", "https://via.placeholder.com/25",[
         {
           text: "It was the White Rabbit, trotting slowly back again, and looking anxiously about as it went, as if it had lost something; and she heard it muttering to itself ‘The Duchess! The Duchess! Oh my dear paws! Oh my fur and whiskers! She’ll get me executed, as sure as ferrets are ferrets! Where can I have dropped them, I wonder?’ Alice guessed in a moment that it was looking for the fan and the pair of white kid gloves, and she very good-naturedly began hunting about for them, but they were nowhere to be seen—everything seemed to have changed since her swim in the pool, and the great hall, with the glass table and the little door, had vanished completely.",
           className: "chapter_text"
@@ -467,12 +451,8 @@ const chapters = {
           className: "chapter_text"
           
         }]
-  },
-  5: { 
-    title: "Advice from a Caterpillar", 
-    chap: "V",
-    img: "https://via.placeholder.com/25",
-    texts: [
+      ),
+  5: createChapter("Advice from a Caterpillar", "V", "https://via.placeholder.com/25", [
         {
           text: "The Caterpillar and Alice looked at each other for some time in silence: at last the Caterpillar took the hookah out of its mouth, and addressed her in a languid, sleepy voice.",
           className: "chapter_text"
@@ -702,12 +682,8 @@ const chapters = {
         
 
         }]
-  },
-  6: { 
-    title: "Pig and Pepper", 
-    chap: "VI",
-    img: "https://via.placeholder.com/25",
-    texts: [
+      ),
+  6: createChapter("Pig and Pepper", "VI", "https://via.placeholder.com/25",[
         {
           text: "For a minute or two she stood looking at the house, and wondering what to do next, when suddenly a footman in livery came running out of the wood—(she considered him to be a footman because he was in livery: otherwise, judging by his face only, she would have called him a fish)—and rapped loudly at the door with his knuckles. It was opened by another footman in livery, with a round face, and large eyes like a frog; and both footmen, Alice noticed, had powdered hair that curled all over their heads. She felt very curious to know what it was all about, and crept a little way out of the wood to listen.",
           className: "chapter_text"
@@ -809,7 +785,7 @@ const chapters = {
           text: "’Talking of axes,’ said the Duchess, ‘chop off her head!’ Alice glanced rather anxiously at the cook, to see if she meant to take the hint; but the cook was busily stirring the soup, and seemed not to be listening, so she went on again: ‘Twenty-four hours, I think; or is it twelve? I—’ ’Oh, don’t bother ME,’ said the Duchess; ‘I never could abide figures!’ And with that she began nursing her child again, singing a sort of lullaby to it as she did so, and giving it a violent shake at the end of every line:",
           className: "chapter_text"
         },{
-          text: "’<i>Speak roughly to your little boy,\n And beat him when he sneezes:\nHe only does it to annoy,\nBecause he knows it teases.</i>’\n CHORUS\n(In which the cook and the baby joined):—",
+          text: "’<i>Speak roughly to your little boy,<br/> And beat him when he sneezes:</br>He only does it to annoy,</br>Because he knows it teases.</i>’</br> CHORUS</br>(In which the cook and the baby joined):—",
           className: "chapter_text cit"
         },{
           text: "’Wow! wow! wow!’",
@@ -818,7 +794,7 @@ const chapters = {
           text: "While the Duchess sang the second verse of the song, she kept tossing the baby violently up and down, and the poor little thing howled so, that Alice could hardly hear the words:—",
           className: "chapter_text"
         },{
-          text: "’I speak severely to my boy,\n I beat him when he sneezes;\n For he can thoroughly enjoy\nThe pepper when he pleases!’\n CHORUS",
+          text: "’I speak severely to my boy,</br> I beat him when he sneezes;</br> For he can thoroughly enjoy</br>The pepper when he pleases!’</br> CHORUS",
           className: "chapter_text"
         },{
           text: "’Wow! wow! wow!’",
@@ -938,8 +914,14 @@ const chapters = {
           text: "She had not gone much farther before she came in sight of the house of the March Hare: she thought it must be the right house, because the chimneys were shaped like ears and the roof was thatched with fur. It was so large a house, that she did not like to go nearer till she had nibbled some more of the left hand bit of mushroom, and raised herself to about two feet high: even then she walked up towards it rather timidly, saying to herself ‘Suppose it should be raving mad after all! I almost wish I’d gone to see the Hatter instead!’",
           className: "chapter_text"
 
-        }] },
-  7: { title: "Festa louca do chá", chap: "VII" },
+        }] ),
+        
+  7: createChapter("Festa Louca do chá", "I", "https://via.placeholder.com/25", [
+    { 
+      text: "Texto 1" ,
+      className: "text"
+   }]),
+
   8: { title: "O campo de croquet da Rainha", chap: "VIII" },
   9: { title: "A história da tartaruga falsa", chap: "IX" },
   10: { title: "A Quadrilha da Lagosta", chap: "X" },
