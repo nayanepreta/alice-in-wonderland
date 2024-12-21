@@ -59,10 +59,6 @@ const Contents = ({
       </tbody>
     </table>
 
-    <Navigation 
-      onPrev={onPrev} 
-      onNext={onNext} 
-      goToCover={goToCover} />
     </div>
   );
 };

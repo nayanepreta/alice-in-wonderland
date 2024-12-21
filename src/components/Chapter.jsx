@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import DOMPurify from 'dompurify';
 import chapters from '../control/chapters';
 import Navigation from './Navigation';
-
+import Header from '../components/Header';
 
 const Chapter = ({ chapterNumber, onNext, goToContents, goToCover }) => {
   const { title: chapterTitle, chap: chapterRoman, img: image, texts: chapterTexts } = chapters[chapterNumber];
@@ -17,6 +17,7 @@ const Chapter = ({ chapterNumber, onNext, goToContents, goToCover }) => {
 
   return (
     <div className="page chapter_page">
+      <Header goToContents={goToContents} />
       <span className="chapter_subtitle">{chapterRoman}</span>
       <h2 className="chapter_title">{chapterTitle}</h2>
       <img className="chapter_img_abertura" src={image} alt="" loading="lazy"/>
