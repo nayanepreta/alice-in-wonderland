@@ -1,34 +1,55 @@
-import React from 'react';
+import React, { useState } from "react";
 
-const Navigation = ({ 
-  onNext, 
-  goToContents, 
-  goToCover }) => {
+const Navigation = ({ onNext, goToSummary, goToContents, goToCover }) => {
+  const [showAdditionalButtons, setShowAdditionalButtons] = useState(false);
+
+  const handleFirstButtonClick = () => {
+    setShowAdditionalButtons(!showAdditionalButtons);
+  };
+
   return (
-    <div className="navigation">
+    <div className={`navigation ${showAdditionalButtons ? "show-extra-buttons" : ""}`}>
+      {/* First Button */}
+      <button onClick={handleFirstButtonClick}>
+        <img
+          src="https://raw.githubusercontent.com/nayanesenhorinha/abelhinha/refs/heads/main/src/assets/menu.png"
+          alt="More Options"
+          className="nav-icon"
+          loading="lazy"
+        />
+      </button>
 
-      {goToContents && 
-        <button onClick={goToContents}>
-          <img 
-            src="https://raw.githubusercontent.com/nayanesenhorinha/abelhinha/refs/heads/main/src/assets/menu.png" 
-            alt="Sumário" 
-            className="nav-icon" loading="lazy"/>
-        </button>}
-      
-      {goToCover && 
+      {/* Additional Buttons */}
+      <div
+        className={`additional-buttons ${showAdditionalButtons ? "visible" : ""}`}
+      >
+        {goToSummary && <button onClick={goToSummary}>S</button>}
+        {goToContents && <button onClick={goToContents}>C</button>}
+      </div>
+
+      {/* Cover Button */}
+      {goToCover && (
         <button onClick={goToCover}>
-          <img 
-            src="https://raw.githubusercontent.com/nayanesenhorinha/abelhinha/refs/heads/main/src/assets/casa.png" 
-            alt="Capa" 
-            className="nav-icon" loading="lazy"/>
-        </button>}
-      {onNext && 
+          <img
+            src="https://raw.githubusercontent.com/nayanesenhorinha/abelhinha/refs/heads/main/src/assets/casa.png"
+            alt="Cover"
+            className="nav-icon"
+            loading="lazy"
+          />
+        </button>
+      )}
+
+      {/* Next Button */}
+      {onNext && (
         <button onClick={onNext}>
-          <img 
-            src="https://raw.githubusercontent.com/nayanesenhorinha/abelhinha/refs/heads/main/src/assets/depois.png" 
-            alt="Próxima" 
-            className="nav-icon" loading="lazy"/>
-        </button>}
+          <img
+            src="https://raw.githubusercontent.com/nayanesenhorinha/abelhinha/refs/heads/main/src/assets/depois.png"
+            alt="Next"
+            className="nav-icon"
+            loading="lazy"
+          />
+        </button>
+      )}
     </div>
   );
 };

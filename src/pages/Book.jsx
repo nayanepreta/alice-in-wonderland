@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable'; 
+
 import '../control/copy';
 import '../styles/ebook.css';
+
 import Cover from '../components/Cover';
 import Infos from '../components/Infos';
-import Contents from '../components/Contents';
+import Summary from '../components/Summary';
 import Chapter1 from '../chapters/Chapter1';
 import Chapter2 from '../chapters/Chapter2';
+import Contents from '../components/Contents';
 
 const Book = () => {
+
   const [currentPage, setCurrentPage] = useState(0);
 
   const setCurrentPageAndSave = (page) => {
@@ -19,35 +23,40 @@ const Book = () => {
   };
   
   const pages = [
+
     <Cover 
+      goToSummary={() => setCurrentPageAndSave(2)}
       onNext={() => setCurrentPageAndSave(1)} 
       goToContents={() => setCurrentPageAndSave('menu')} />,
 
-    <Infos 
-      onPrev={() => setCurrentPageAndSave(0)} 
+    <Infos // 1
       onNext={() => setCurrentPageAndSave(2)} 
-      goToContents={() => setCurrentPageAndSave('menu')} 
-      goToCover={() => setCurrentPageAndSave(0)} />,
+      goToCover={() => setCurrentPageAndSave(0)}
+      goToSummary={() => setCurrentPageAndSave(2)}
+      goToContents={() => setCurrentPageAndSave('menu')} />,
 
-    <Contents 
-      onPrev={() => setCurrentPageAndSave(3)} 
-      goToChapter={(pageIndex) => setCurrentPageAndSave(pageIndex)} 
-      goToCover={() => setCurrentPageAndSave(0)} />,
-
-    <Chapter1 
-      onPrev={() => setCurrentPageAndSave(4)} 
-      onNext={() => setCurrentPageAndSave(6)} 
+    <Summary 
+      onNext={() => setCurrentPageAndSave(3)} 
       goToContents={() => setCurrentPageAndSave('menu')} 
-      goToCover={() => setCurrentPageAndSave(0)} />,
+      goToCover={() => setCurrentPageAndSave(0)} 
+      goToSummary={() => setCurrentPageAndSave(2)}/>,
+
+    <Chapter1 // 3
+      onNext={() => setCurrentPageAndSave(4)} 
+      goToContents={() => setCurrentPageAndSave('menu')} 
+      goToCover={() => setCurrentPageAndSave(0)} 
+      goToSummary={() => setCurrentPageAndSave(2)}/>,
       
-    <Chapter2 
-      onPrev={() => setCurrentPageAndSave(5)} 
-      onNext={() => setCurrentPageAndSave(7)} 
+    <Chapter2 // 4
+      //onNext={() => setCurrentPageAndSave(7)} 
       goToContents={() => setCurrentPageAndSave('menu')} 
-      goToCover={() => setCurrentPageAndSave(0)} />,
+      goToCover={() => setCurrentPageAndSave(0)} 
+      goToSummary={() => setCurrentPageAndSave(2)}/>,
+
     // Continue adicionando os capítulos na ordem desejada
   ];
 
+    // salvar a páginas
   //useEffect(() => {
     //const savedPage = localStorage.getItem('currentPage');
     //if (savedPage) {

@@ -4,11 +4,12 @@ import Navigation from './Navigation';
 
 const Contents = ({ 
   goToChapter, 
-  onPrev, 
   onNext, 
-  goToCover }) => {
+  goToCover,
+  goToSummary,
+  goToContents }) => {
 
-  const chapterTitle = "Summary";
+  const chapterTitle = "Table of Contents";
 
       useEffect(() => {
         const bookTitleT = chapters[0].titulo; 
@@ -58,7 +59,11 @@ const Contents = ({
         ))}
       </tbody>
     </table>
-
+    <Navigation 
+        goToCover={goToCover} 
+        onNext={onNext} 
+        goToSummary={goToSummary} 
+        goToContents={goToContents}/>
     </div>
   );
 };

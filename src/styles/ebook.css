@@ -3,7 +3,7 @@
 */
 
 :root {
-    --preto: #CE2139;
+    --preto: #131313;
     --branco: #fefefe;
     --font-text: "Source Sans 3";
     --font-titulos: "Source Sans 3";
@@ -70,6 +70,33 @@ body {
     }
   }
 
+/* CAPA */
+
+.cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.cover .capa {
+    object-position: center; 
+    height: 100%; 
+    width: auto;
+    overflow: hidden;
+}
+
+.cover_titulo {
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    position: absolute;
+    color: var(--branco);
+    margin-top: -1rem;
+}
+
 /* INFOS1::FOLHA DE ROSTO*/
 
 .info {
@@ -83,64 +110,14 @@ body {
 .info_nome_autor {
     margin-top: 1rem;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 .info_titulo_livro {
     font-weight: bold;
     font-size: 3rem;
     text-align: center;
-    margin: 0 3rem;
 }
 
-
-/* INFOS2::LEWIS CARROLL */
-
-.autor_intro {
-    margin: 2rem 0;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-.autor_nome {
-    position: fixed;
-    font-weight: bold;
-    font-size: 2rem;
-    bottom: 9.375rem;
-}
-
-.autor_foto {
-    position: absolute; /* Ou fixed para manter o elemento fixo ao rolar a página */
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-
-/* CRÉDITOS */
-
-.credits {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-}
-
-.cabeco_creditos {
-    margin-bottom: 2.5rem;
-}
-
-.credits_text {
-    text-align: left;
-    margin-bottom: 0.5rem;
-    line-height: 1.5625rem;
-    padding: 0 3rem;
-}
-
-.credits_logo_editora {
-    margin: 1.25rem 0;
-}
 
 
 /* SUMÁRIO */
@@ -183,64 +160,88 @@ body {
     text-align: center;
  }
 
-/* CAPÍTULOS */
 
+  
 
-.chapter_subtitle {
-    font-size: 0.75rem;
-    margin-top: 0.5rem;
+/*  CABEÇALHO */
+
+.header {
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
 }
+
+.header-button {
+    background-color: transparent;
+}
+
+ 
+/* CAPÍTULOS */
 
 .chapter_title {
     font-family: var(--font-titulos);
-    margin: 2rem 0 0;
     font-weight: bold;
-    font-size: 1.5625rem;
+    font-size: 1.2rem;
     color: var(--preto);
+    margin-top: 5rem;
+}
+
+.chapter_subtitle {
+    font-size: 0.75rem;
 }
 
 .chapter_img_abertura {
-    margin: 2rem 0 2rem;
+    margin: 1rem 0 1rem;
 }
 
 .chapter_content {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .chapter_text {
     color: var(--preto);
     text-align: justify;
-    margin-bottom: 0.625rem;
-    text-indent: 0.9375rem;
+    text-indent: 1rem;
     font-family: var(--font-text);
     font-size: var(--font-size);
     line-height: 1.5625rem;
     width: 100%;
 }
 
-.text_italic {
-    font-style: italic;
-}
+    .chapter_ret {
+        width: 100%;
+        text-align: center;
+    }
+
+     .text_italic {
+        font-style: italic;
+     }
 
 
   /* MENU */
 
+  
   .navigation {
-    position: fixed;
+    position: absolute;
+    width: 100%;
     bottom: 1.25rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%; /* Centraliza a navegação */
+    transform: translateX(-50%); /* Continua centralizado */
     z-index: 1000;
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 0.5rem;
     align-items: center;
-}
+    transition: transform 0.3s ease; /* Transição suave */
+  }
+  
+  .navigation button {
 
-.navigation button {
     background-color: var(--preto);
     width: 1.875rem;
     height: 1.875rem;
@@ -249,9 +250,34 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.navigation button img {
+    transition: transform 0.3s ease; 
+  }
+  
+  .navigation button img {
     width: 0.875rem;
-}
-
+  }
+  
+  .additional-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateX(-20px); 
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .additional-buttons.visible {
+    opacity: 1;
+    transform: translateX(0); 
+    pointer-events: auto;
+    visibility: visible;
+    position: static;
+  }
+  
+  .navigation.show-extra-buttons {
+    transform: translateX(-50%) translateX(-3px);
+  }
+  

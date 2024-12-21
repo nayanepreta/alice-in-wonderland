@@ -1,26 +1,26 @@
 import React from 'react';
 import Navigation from './Navigation';
 import chapters from '../control/chapters';
+import Header from '../components/Header';
 
 const { 
   titulo: titulo, 
   autor: autor,
   editora: editora} = chapters[0]; 
 
-const Infos1 = ({ 
+const Infos = ({ 
   onNext, 
   goToContents, 
-  goToCover }) => {
+  goToCover,
+  goToSummary}) => {
 
   return (
     <div className="page info">
-      <p className="info_nome_autor">
-        {autor}
-      </p>
 
-      <h1 className="info_titulo_livro">
-        {titulo}
-      </h1>
+      <Header goToContents={goToContents} />
+      <p className="info_nome_autor">{autor}</p>
+
+      <h1 className="info_titulo_livro">{titulo}</h1>
       
       <img 
         className="info_logo_editora" 
@@ -30,9 +30,10 @@ const Infos1 = ({
       <Navigation 
         goToCover={goToCover} 
         onNext={onNext} 
-        goToContents={goToContents} />
+        goToContents={goToContents}
+        goToSummary={goToSummary} />
     </div>
   );
 };
 
-export default Infos1;
+export default Infos;
