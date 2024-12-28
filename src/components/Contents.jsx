@@ -13,7 +13,7 @@ const Contents = ({
 
       useEffect(() => {
         const bookTitleT = chapters[0].titulo; 
-        document.title = `${chapterTitle} • ${bookTitleT}`;
+        document.title = `${chapterTitle} | ${bookTitleT}`;
         return () => {
           document.title = chapters[0].titulo; 
         };

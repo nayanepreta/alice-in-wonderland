@@ -8,7 +8,7 @@ const Chapter = ({ chapterNumber, onNext, goToSummary, goToCover, goToContents }
 
   useEffect(() => {
     const bookTitleT = chapters[0].titulo;
-    document.title = `${chapterTitle} • ${bookTitleT}`;
+    document.title = `${chapterTitle} | ${bookTitleT}`;
     return () => {
       document.title = chapters[0].titulo;
     };
