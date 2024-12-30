@@ -2,24 +2,14 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="header">
-
-      <button
-        className="header-button header-button-summary"
-      >
-    Sumário
-      </button>
-      <button
-        className="header-button header-button-nightmode"
-        onClick={() => {
-          console.log("Botão Modo Noturno clicado!");
-        }}
-      >
-        Noturno
-      </button>
-
+    <div className="header">
+        <div>
+           <button>Aumentar Fonte</button>
+            <button>Diminuir Fonte</button> 
+        </div>
       
-    </header>
+      <button>Modo Noturno</button>
+    </div>
   );
 };
 
