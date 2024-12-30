@@ -9,6 +9,7 @@ const Chapter = ({ chapterNumber, onNext, goToSummary, goToCover, goToContents }
   
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [lastTouchTime, setLastTouchTime] = useState(0);
 
   // Função para monitorar a rolagem da página
   const handleScroll = () => {
@@ -25,9 +26,15 @@ const Chapter = ({ chapterNumber, onNext, goToSummary, goToCover, goToContents }
     setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop); // Evita valores negativos
   };
 
-  // Função para detectar o toque na tela
-  const handleTouch = () => {
-    setIsHeaderVisible(prevState => !prevState);
+  // Função para detectar o duplo toque na tela
+  const handleTouch = (e) => {
+    const currentTime = new Date().getTime();
+    const timeDifference = currentTime - lastTouchTime;
+
+    if (timeDifference < 300) { // Se o intervalo entre os toques for menor que 300ms, é considerado um duplo toque
+      setIsHeaderVisible(prevState => !prevState);
+    }
+    setLastTouchTime(currentTime); // Atualiza o tempo do último toque
   };
 
   useEffect(() => {
@@ -42,7 +49,7 @@ const Chapter = ({ chapterNumber, onNext, goToSummary, goToCover, goToContents }
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("touchstart", handleTouch);
     };
-  }, [lastScrollTop]);
+  }, [lastScrollTop, lastTouchTime]);
 
   useEffect(() => {
     const bookTitleT = chapters[0].titulo;
