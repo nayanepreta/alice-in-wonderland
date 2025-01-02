@@ -11,40 +11,32 @@ const Chapter = ({ chapterNumber, onNext, goToSummary, goToCover, goToContents }
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [lastTouchTime, setLastTouchTime] = useState(0);
 
-  // Função para monitorar a rolagem da página
   const handleScroll = () => {
     const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Se rolou para cima, exibe o Header
     if (currentScrollTop < lastScrollTop) {
       setIsHeaderVisible(true);
     } else {
       setIsHeaderVisible(false);
     }
 
-    // Atualiza a posição de rolagem
-    setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop); // Evita valores negativos
+    setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop); 
   };
 
-  // Função para detectar o duplo toque na tela
   const handleTouch = (e) => {
     const currentTime = new Date().getTime();
     const timeDifference = currentTime - lastTouchTime;
 
-    if (timeDifference < 300) { // Se o intervalo entre os toques for menor que 300ms, é considerado um duplo toque
+    if (timeDifference < 300) { 
       setIsHeaderVisible(prevState => !prevState);
     }
-    setLastTouchTime(currentTime); // Atualiza o tempo do último toque
+    setLastTouchTime(currentTime); 
   };
 
   useEffect(() => {
-    // Adiciona o evento para monitorar a rolagem da página
     window.addEventListener("scroll", handleScroll);
-
-    // Adiciona o evento de toque na tela
     window.addEventListener("touchstart", handleTouch);
 
-    // Limpa os eventos quando o componente é desmontado
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("touchstart", handleTouch);
@@ -61,7 +53,6 @@ const Chapter = ({ chapterNumber, onNext, goToSummary, goToCover, goToContents }
 
   return (
     <div className="page chapter_page">
-      {/* Exibe o Header se estiver visível */}
       {isHeaderVisible && <Header />}
 
       <span className="chapter_subtitle">Capítulo {chapterRoman}</span>

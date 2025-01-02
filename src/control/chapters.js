@@ -65,7 +65,7 @@ const chapters = {
           className: "chapter_text"
         },{
           text: "***",
-          className: "chapter_ret"
+          className: "chapter_text_space chapter_text"
         },{
           text: "’What a curious feeling!’ said Alice; ‘I must be shutting up like a telescope.’",
           className: "chapter_text"
@@ -88,8 +88,8 @@ const chapters = {
           text: "So she set to work, and very soon finished off the cake.",
           className: "chapter_text"
         },{
-          text: "* * * *",
-          className: "chapter_ret"
+          text: "* * *",
+          className: "chapter_text_space chapter_text"
         }
     ]),
 
@@ -102,8 +102,8 @@ const chapters = {
           text: "And she went on planning to herself how she would manage it. ‘They must go by the carrier,’ she thought; ‘and how funny it’ll seem, sending presents to one’s own feet! And how odd the directions will look!",
           className: "chapter_text"
         },{
-          text: "ALICE’S RIGHT FOOT, ESQ.</br> HEARTHRUG,</br>NEAR THE FENDER,</br>(WITH ALICE’S LOVE).",
-          className: "chapter_citacao"
+          text: "</br>ALICE’S RIGHT FOOT, ESQ.</br> HEARTHRUG,</br>NEAR THE FENDER,</br>(WITH ALICE’S LOVE).</br></br>",
+          className: "chapter_text chapter_text_italic"
         },{
           text: "Oh dear, what nonsense I’m talking!",
           className: "chapter_text"
@@ -126,8 +126,8 @@ const chapters = {
           text: "’I’m sure I’m not Ada,’ she said, ‘for her hair goes in such long ringlets, and mine doesn’t go in ringlets at all; and I’m sure I can’t be Mabel, for I know all sorts of things, and she, oh! she knows such a very little! Besides, she’s she, and I’m I, and—oh dear, how puzzling it all is! I’ll try if I know all the things I used to know. Let me see: four times five is twelve, and four times six is thirteen, and four times seven is—oh dear! I shall never get to twenty at that rate! However, the Multiplication Table doesn’t signify: let’s try Geography. London is the capital of Paris, and Paris is the capital of Rome, and Rome—no, that’s all wrong, I’m certain! I must have been changed for Mabel! I’ll try and say ‘How doth the little—‘‘ and she crossed her hands on her lap as if she were saying lessons, and began to repeat it, but her voice sounded hoarse and strange, and the words did not come the same as they used to do",
           className: "chapter_text"  
         },{
-          text: "— ’How doth the little crocodile</br>Improve his shining tail,</br>And pour the waters of the Nile</br> On every golden scale!</br></br>‘How cheerfully he seems to grin, </br>How neatly spread his claws,</br> And welcome little fishes in</br> With gently smiling jaws!’",
-          className: "chapter_poema"
+          text: "— ’How doth the little crocodile</br>Improve his shining tail,</br>And pour the waters of the Nile</br> On every golden scale!</br></br>‘How cheerfully he seems to grin, </br>How neatly spread his claws,</br> And welcome little fishes in</br> With gently smiling jaws!’</br></br>",
+          className: "chapter_text chapter_text_italic"
         },{
           text: "’I’m sure those are not the right words,’ said poor Alice, and her eyes filled with tears again as she went on, ‘I must be Mabel after all, and I shall have to go and live in that poky little house, and have next to no toys to play with, and oh! ever so many lessons to learn! No, I’ve made up my mind about it; if I’m Mabel, I’ll stay down here! It’ll be no use their putting their heads down and saying ‘Come up again, dear!’ I shall only look up and say ‘Who am I then? Tell me that first, and then, if I like being that person, I’ll come up: if not, I’ll stay down here till I’m somebody else’—but, oh dear!’ cried Alice, with a sudden burst of tears, ‘I do wish they would put their heads down! I am so very tired of being all alone here!’",
           className: "chapter_text"
@@ -529,28 +529,28 @@ const chapters = {
           className: "chapter_text"
         },{
           text: "’You are old, Father William,’ the young man said, ‘And your hair has become very white; And yet you incessantly stand on your head— Do you think, at your age, it is right?’",
-          className: "chapter_text text_italic"
+          className: "chapter_text chapter_text_italic"
         },{
           text: "’In my youth,’ Father William replied to his son, ‘I feared it might injure the brain; But, now that I’m perfectly sure I have none, Why, I do it again and again.’",
-          className: "chapter_text text_italic"
+          className: "chapter_text chapter_text_italic"
         },{
           text: "You are old,’ said the youth, ‘as I mentioned before, And have grown most uncommonly fat; Yet you turned a back- somersault in at the door— Pray, what is the reason of that?’",
-          className: "chapter_text text_italic"
+          className: "chapter_text chapter_text_italic"
         },{
           text: "’In my youth,’ said the sage, as he shook his grey locks, ‘I kept all my limbs very supple By the use of this ointment—one shilling the box— Allow me to sell you a couple?’",
-          className: "chapter_text text_italic"
+          className: "chapter_text chapter_text_italic"
         },{
           text: "’You are old,’ said the youth, ‘and your jaws are too weak For anything tougher than suet; Yet you finished the goose, with the bones and the beak— Pray how did you manage to do it?’",
-          className: "chapter_text text_italic"
+          className: "chapter_text chapter_text_italic"
         },{
           text: "’In my youth,’ said his father, ‘I took to the law, And argued each case with my wife; And the muscular strength, which it gave to my jaw, Has lasted the rest of my life.’",
-          className: "chapter_text text_italic"
+          className: "chapter_text chapter_text_italicc"
         },{
           text: "’You are old,’ said the youth, ‘one would hardly suppose That your eye was as steady as ever; Yet you balanced an eel on the end of your nose— What made you so awfully clever?’",
-          className: "chapter_text text_italic"
+          className: "chapter_text chapter_text_italic"
         },{
           text: "’I have answered three questions, and that is enough,’ Said his father; ‘don’t give yourself airs! Do you think I can listen all day to such stuff? Be off, or I’ll kick you down stairs!’",
-          className: "chapter_text text_italic"
+          className: "chapter_text chapter_text_italic"
         },{
           text: "’That is not said right,’ said the Caterpillar.",
           className: "chapter_text"
@@ -610,8 +610,8 @@ const chapters = {
           text: "She was a good deal frightened by this very sudden change, but she felt that there was no time to be lost, as she was shrinking rapidly; so she set to work at once to eat some of the other bit. Her chin was pressed so closely against her foot, that there was hardly room to open her mouth; but she did it at last, and managed to swallow a morsel of the lefthand bit.",
           className: "chapter_text"
         },{
-          text: "* * * *",
-          className: "chapter_ret"
+          text: "* * *",
+          className: "chapter_text_space chapter_text"
         },{
           text: "’Come, my head’s free at last!’ said Alice in a tone of delight, which changed into alarm in another moment, when she found that her shoulders were nowhere to be found: all she could see, when she looked down, was an immense length of neck, which seemed to rise like a stalk out of a sea of green leaves that lay far below her.",
           className: "chapter_text"
@@ -919,7 +919,8 @@ const chapters = {
     { 
       text: "Texto 1" ,
       className: "text"
-   }]),
+    }
+  ]),
 
   8: { title: "O campo de croquet da Rainha", chap: "VIII" },
   9: { title: "A história da tartaruga falsa", chap: "IX" },

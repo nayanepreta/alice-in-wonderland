@@ -4,11 +4,13 @@ const Header = () => {
   return (
     <div className="header">
         <div>
-           <button>Aumentar Fonte</button>
-            <button>Diminuir Fonte</button> 
+          <button>A+</button>
+          <button>A-</button> 
         </div>
-      
-      <button>Modo Noturno</button>
+        <div>
+          <button>Download</button>
+          <button>Noturno</button>
+        </div>
     </div>
   );
 };
