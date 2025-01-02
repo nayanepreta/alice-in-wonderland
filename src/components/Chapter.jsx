@@ -46,6 +46,7 @@ const Chapter = ({ chapterNumber, onNext, goToSummary, goToCover, goToContents }
   useEffect(() => {
     const bookTitleT = chapters[0].titulo;
     document.title = `${chapterTitle} | ${bookTitleT}`;
+    window.scrollTo(0, 0);
     return () => {
       document.title = chapters[0].titulo;
     };

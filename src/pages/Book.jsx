@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,  useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable'; 
 
 import '../control/copy';
@@ -56,13 +56,12 @@ const Book = () => {
     // Continue adicionando os capítulos na ordem desejada
   ];
 
-    // salvar a páginas
-  //useEffect(() => {
-    //const savedPage = localStorage.getItem('currentPage');
-    //if (savedPage) {
-      //setCurrentPage(savedPage === 'menu' ? 'menu' : parseInt(savedPage, 10));
-    //}
-  //}, []);
+  useEffect(() => {
+    const savedPage = localStorage.getItem('currentPage');
+    if (savedPage) {
+      setCurrentPage(savedPage === 'menu' ? 'menu' : parseInt(savedPage, 10));
+    }
+  }, []);
 
   const handleSwipeLeft = () => {
     if (currentPage !== 'menu' && currentPage < pages.length - 1) {
